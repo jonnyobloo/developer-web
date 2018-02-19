@@ -1,0 +1,40 @@
+block config 
+    include ../config/config.pug
+
+doctype html
+html
+    head
+        title #{pageTitle} | #{siteTitle}
+        meta(charset="utf-8")
+        meta(name='description' content=description)
+        meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no")
+        link(rel='stylesheet' href="https://cdn.rawgit.com/escueladigital/EDgrid/9722854f/css/ed-grid.min.css")
+        link(href="https://file.myfontastic.com/xGSGaRkPnrQxxkRRuYoArQ/icons.css" rel="stylesheet")
+        link(rel='stylesheet' href='/css/styles-dist.css')
+    body
+        header.main-header
+            .logo-container 
+            a(href="/")
+                img(src='/img/logo.png').logo
+
+            nav.menu
+                include ../blocks/menu.pug
+
+        div
+            block banner
+                img(src='/img/' + currentPage + '.jpg')
+
+        .main-content 
+            main 
+                block main
+
+            aside.main-sidebar
+                block aside
+                    if siguenos == true 
+                    include ../blocks/siguenos.pug
+
+        footer.main-footer
+            p Su Barberia Luis Moreno - Todos los derechos reservados 2018
+            block footer
+
+

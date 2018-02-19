@@ -1,0 +1,13 @@
+extends templates/template.pug
+
+append config 
+    -siguenos = false
+
+block main 
+    h1 Bienvenidos 
+    p Bienvenidos a su barberia Luis Moreno donde nuestra prioridad es usted
+
+block footer 
+    include blocks/siguenos.pug 
+    
+
